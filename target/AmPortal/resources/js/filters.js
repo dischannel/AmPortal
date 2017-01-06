@@ -2,7 +2,7 @@
 
 /* Filters */
 
-var AppFilters = angular.module('AngularSpringmvcMybatis.filters', []);
+var AppFilters = angular.module('AmPortal.filters', []);
 
 AppFilters.filter('interpolate', ['version', function (version) {
     return function (text) {

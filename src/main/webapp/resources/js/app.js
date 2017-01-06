@@ -1,8 +1,8 @@
 'use strict';
 
-var AngularSpringmvcMybatis = {};
+var AmPortal = {};
 
-var App = angular.module('AngularSpringmvcMybatis', ['AngularSpringmvcMybatis.filters', 'AngularSpringmvcMybatis.services', 'AngularSpringmvcMybatis.directives']);
+var App = angular.module('AmPortal', ['AmPortal.filters', 'AmPortal.services', 'AmPortal.directives']);
 
 // Declare app level module which depends on filters, and services
 App.config(['$routeProvider', function ($routeProvider) {
@@ -10,6 +10,17 @@ App.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'users/layout',
         controller: UserController
     });
+    
+    $routeProvider.when('/home', {
+        templateUrl: 'resources/tmpl/home.html',
+        controller: HomeController
+    });
+    
+    $routeProvider.when('/aboutUs', {
+        templateUrl: 'resources/tmpl/page-about.html',
+        controller: HomeController
+    });
 
-    $routeProvider.otherwise({redirectTo: '/users'});
+
+    $routeProvider.otherwise({redirectTo: '/home'});
 }]);
